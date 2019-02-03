@@ -1,10 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nc3-YC-BRp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Character View Controller-->
+        <scene sceneID="N9k-3Q-Rwu">
+            <objects>
+                <viewController id="Nc3-YC-BRp" customClass="CharacterViewController" customModule="RickAndMortyAPI_iOS22" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J63-ls-sNb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-Sv-gZ4">
+                                <rect key="frame" x="0.0" y="105" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rickLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-us-RhK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Fkf-H2-dBS">
+                                <rect key="frame" x="294" y="123" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" prefetchingEnabled="NO" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBP-2N-vuK">
+                                <rect key="frame" x="24" y="176" width="335" height="380"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.62337838000000001" blue="0.77790464749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qUQ-7m-SF9">
+                                    <size key="itemSize" width="306" height="379"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterCell" id="Xb9-pN-qbF" customClass="CharactersDetailCollectionViewCell" customModule="RickAndMortyAPI_iOS22" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.5" width="306" height="379"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="306" height="379"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8Cu-EK-SFz">
+                                                    <rect key="frame" x="20" y="248" width="61.5" height="118"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-eu-Syz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="57.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Status)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmm-fB-WEu">
+                                                            <rect key="frame" x="0.0" y="32.5" width="61.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(ID)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-ZS-ygB">
+                                                            <rect key="frame" x="0.0" y="65" width="28.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(origin)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-dH-oLH">
+                                                            <rect key="frame" x="0.0" y="97.5" width="55" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-1O-3Zf">
+                                                    <rect key="frame" x="52" y="13" width="226" height="229"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="229" id="qJf-4H-d7W"/>
+                                                        <constraint firstAttribute="width" constant="226" id="vPY-jT-XVA"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.92891609668731689" green="0.21953278779983521" blue="0.19875350594520569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="8Cu-EK-SFz" firstAttribute="leading" secondItem="Xb9-pN-qbF" secondAttribute="leading" constant="20" id="5GJ-C9-vyP"/>
+                                            <constraint firstItem="8Cu-EK-SFz" firstAttribute="top" secondItem="S7E-1O-3Zf" secondAttribute="bottom" constant="6" id="7S2-hc-uN6"/>
+                                            <constraint firstItem="S7E-1O-3Zf" firstAttribute="leading" secondItem="Xb9-pN-qbF" secondAttribute="leadingMargin" constant="44" id="AQw-82-zuq"/>
+                                            <constraint firstItem="S7E-1O-3Zf" firstAttribute="top" secondItem="Xb9-pN-qbF" secondAttribute="topMargin" constant="5" id="H0O-sA-v5F"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="S7E-1O-3Zf" secondAttribute="trailing" constant="20" id="luu-9W-hb4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="IDLabel" destination="xAb-ZS-ygB" id="cLT-uE-7bB"/>
+                                            <outlet property="characterImageView" destination="S7E-1O-3Zf" id="QtV-s5-GBY"/>
+                                            <outlet property="nameLabel" destination="6WY-eu-Syz" id="gIE-Xf-9vS"/>
+                                            <outlet property="originLabel" destination="jhg-dH-oLH" id="md1-n5-m49"/>
+                                            <outlet property="statusLabel" destination="bmm-fB-WEu" id="3Hm-nD-Ofx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="bLy-us-RhK" firstAttribute="top" secondItem="J63-ls-sNb" secondAttribute="top" id="B3R-nx-zSr"/>
+                            <constraint firstItem="hdx-Sv-gZ4" firstAttribute="top" secondItem="J63-ls-sNb" secondAttribute="top" constant="105" id="BOP-0U-4tv"/>
+                            <constraint firstItem="bLy-us-RhK" firstAttribute="leading" secondItem="ztX-Xj-Hp7" secondAttribute="leading" id="Fmf-oZ-SbQ"/>
+                            <constraint firstItem="hdx-Sv-gZ4" firstAttribute="trailing" secondItem="bLy-us-RhK" secondAttribute="trailing" id="FxI-qY-kbq"/>
+                            <constraint firstItem="bLy-us-RhK" firstAttribute="trailing" secondItem="ztX-Xj-Hp7" secondAttribute="trailing" id="Heo-lh-jen"/>
+                            <constraint firstItem="bLy-us-RhK" firstAttribute="baseline" secondItem="hdx-Sv-gZ4" secondAttribute="firstBaseline" symbolType="layoutAnchor" id="Um6-mb-HpR"/>
+                            <constraint firstItem="hdx-Sv-gZ4" firstAttribute="leading" secondItem="bLy-us-RhK" secondAttribute="leading" id="pkX-qK-83L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ztX-Xj-Hp7"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Fkf-H2-dBS" id="57D-Sc-YZv"/>
+                        <outlet property="characterSearchBar" destination="hdx-Sv-gZ4" id="FB7-YK-B47"/>
+                        <outlet property="collectionViewOutlet" destination="uBP-2N-vuK" id="tEh-KI-EzS"/>
+                        <outlet property="headerLogoImageView" destination="bLy-us-RhK" id="TAA-3g-bKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x98-Lg-e4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="45.42728635682159"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rickLogo" width="1777" height="651"/>
+    </resources>
 </document>

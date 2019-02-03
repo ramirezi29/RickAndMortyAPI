@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+enum NetworkKeys: String {
+    
+    case apiComponent = "api"
+    case characterComponent = "character"
+    case statusComponent = "status"
+}
